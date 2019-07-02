@@ -1,0 +1,44 @@
+﻿<VSTemplate Version="3.0.0" Type="ProjectGroup" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+  <TemplateData>
+    <Name>Clean Architecture Backend Template</Name>
+    <Description>Clean Architecture Backend Solution Template with basic sln and folder structure</Description>
+    <ProjectType>CSharp</ProjectType>
+    <ProjectSubType>
+    </ProjectSubType>
+    <SortOrder>1000</SortOrder>
+    <CreateNewFolder>false</CreateNewFolder>
+    <CreateInPlace>true</CreateInPlace>
+    <DefaultName>Application</DefaultName>
+    <ProvideDefaultName>true</ProvideDefaultName>
+    <LocationField>Enabled</LocationField>
+    <EnableLocationBrowseButton>true</EnableLocationBrowseButton>
+  </TemplateData>
+  <TemplateContent>
+    <ProjectCollection>
+      <SolutionFolder Name="src" CreateOnDisk="true">
+        <SolutionFolder Name="ApplicationCore" CreateOnDisk="true">
+          <ProjectTemplateLink ProjectName="$projectname$.Application">
+            src\ApplicationCore\Template.Application\Application.vstemplate
+          </ProjectTemplateLink>
+          <ProjectTemplateLink ProjectName="$projectname$.Domain">
+            src\ApplicationCore\Template.Domain\Domain.vstemplate
+          </ProjectTemplateLink>
+        </SolutionFolder>
+        <SolutionFolder Name="Infrastructure" CreateOnDisk="true">
+          <ProjectTemplateLink ProjectName="$projectname$.Infrastructure">
+            src\Infrastructure\Template.Infrastructure\Infrastructure.vstemplate
+          </ProjectTemplateLink>
+          <ProjectTemplateLink ProjectName="$projectname$.Persistence">
+            src\Infrastructure\Template.Persistence\Persistence.vstemplate
+          </ProjectTemplateLink>
+        </SolutionFolder>
+        <SolutionFolder Name="Presentation" CreateOnDisk="true">
+          <ProjectTemplateLink ProjectName="$projectname$.API">
+            src\Presentation\Template.API\API.vstemplate
+          </ProjectTemplateLink>
+        </SolutionFolder>
+      </SolutionFolder>
+      <SolutionFolder Name="Documentation" CreateOnDisk="true" />
+    </ProjectCollection>
+  </TemplateContent>
+</VSTemplate>
