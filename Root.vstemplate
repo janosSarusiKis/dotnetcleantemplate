@@ -16,6 +16,11 @@
   <TemplateContent>
     <ProjectCollection>
       <SolutionFolder Name="src" CreateOnDisk="true">
+        <SolutionFolder Name="Presentation" CreateOnDisk="true">
+          <ProjectTemplateLink ProjectName="$projectname$.API">
+            src\Presentation\Template.API\API.vstemplate
+          </ProjectTemplateLink>
+        </SolutionFolder>
         <SolutionFolder Name="ApplicationCore" CreateOnDisk="true">
           <ProjectTemplateLink ProjectName="$projectname$.Application">
             src\ApplicationCore\Template.Application\Application.vstemplate
@@ -31,12 +36,7 @@
           <ProjectTemplateLink ProjectName="$projectname$.Persistence">
             src\Infrastructure\Template.Persistence\Persistence.vstemplate
           </ProjectTemplateLink>
-        </SolutionFolder>
-        <SolutionFolder Name="Presentation" CreateOnDisk="true">
-          <ProjectTemplateLink ProjectName="$projectname$.API">
-            src\Presentation\Template.API\API.vstemplate
-          </ProjectTemplateLink>
-        </SolutionFolder>
+        </SolutionFolder>        
       </SolutionFolder>
       <SolutionFolder Name="Documentation" CreateOnDisk="true" />
     </ProjectCollection>
